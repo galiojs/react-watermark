@@ -1,7 +1,7 @@
 # @galiojs/react-watermark
 
-[![npm version](https://img.shields.io/npm/v/r-watermark.svg?style=flat-square)](https://www.npmjs.org/package/@galiojs/react-watermark)
-[![npm downloads](https://img.shields.io/npm/dm/r-watermark.svg?style=flat-square)](http://npm-stat.com/charts.html?package=@galiojs/react-watermark)
+[![npm version](https://img.shields.io/npm/v/@galiojs/react-watermark.svg?style=flat-square)](https://www.npmjs.org/package/@galiojs/react-watermark)
+[![npm downloads](https://img.shields.io/npm/dm/@galiojs/react-watermark.svg?style=flat-square)](http://npm-stat.com/charts.html?package=@galiojs/react-watermark)
 
 ## Introduction
 
