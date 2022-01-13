@@ -5,6 +5,7 @@
     "target": "ES5",
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "outDir": "lib",
     "declaration": true,
     "sourceMap": true
