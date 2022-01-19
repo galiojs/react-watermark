@@ -10,6 +10,8 @@ export interface Text {
 }
 
 export interface WatermarkProps {
+  style?: React.CSSProperties;
+  className?: string;
   width?: number; // SVG width. Default as "180"
   height?: number; // SVG height. Default as "80"
   zIndex?: number; // Watermark div style z-index. Default as "-1".
@@ -18,6 +20,8 @@ export interface WatermarkProps {
 }
 
 export function Watermark({
+  style,
+  className,
   width,
   height,
   zIndex,
@@ -95,12 +99,13 @@ export function Watermark({
     pointerEvents: "none",
     opacity,
     zIndex,
+    ...style,
   };
   if (bgImageUrl) {
     styles = { ...styles, backgroundImage: `url(${bgImageUrl})` };
   }
 
-  return <div style={styles} />;
+  return <div style={styles} className={className} />;
 }
 
 Watermark.defaultProps = {
