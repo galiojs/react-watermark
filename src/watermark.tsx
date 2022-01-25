@@ -63,28 +63,25 @@ export function Watermark({
       `</svg>`;
 
     const DOMURL = window.URL || window.webkitURL;
-
     const img = new Image();
     const svg = new Blob([svgStr], { type: "image/svg+xml" });
-    // Reference https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Drawing_DOM_objects_into_a_canvas
+    // See https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Drawing_DOM_objects_into_a_canvas
     const url = DOMURL.createObjectURL(svg);
     const ctx = document.createElement("canvas").getContext("2d");
-
     const onImgLoad = () => {
       if (ctx) {
         ctx.drawImage(img, 0, 0);
       }
-      DOMURL.revokeObjectURL(url);
     };
-
     img.addEventListener("load", onImgLoad);
-
     img.src = url;
 
     setBgImageUrl(url);
 
     return () => {
       img.removeEventListener("load", onImgLoad);
+      // See https://developer.mozilla.org/en-US/docs/Web/API/URL/revokeObjectURL
+      DOMURL.revokeObjectURL(url);
     };
   }, []);
 
